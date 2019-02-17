@@ -5,12 +5,9 @@ services:
     restart: 'no'
     build:
       context: ./
-      args:
-        site_url: ${site_url}
-        pkg: ${pkg}
     image: ${REGISTRY}/${NAME}:${VER}
     network_mode: "host"
     volumes:
-    - "${PWD}/data/configuration.xml:/usr/share/bubbleupnpserver/configuration.xml:rw"
+    - "${PWD}/data/configuration.xml:/opt/share/bubbleupnpserver/configuration.xml:rw"
     # for test
     #command: /bin/sh -c 'while true; do echo dummy; sleep 600; done'
