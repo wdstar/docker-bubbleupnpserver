@@ -1,11 +1,10 @@
-FROM arm32v7/openjdk:8-jre
+FROM openjdk:8-jre-slim
 
 ARG site_url=https://launchpad.net/~bubbleguuum/+archive/bubbleupnpserver/+files
 ARG pkg=bubbleupnpserver_0.9-5_all.deb
 
 RUN apt-get update -y && \
-    wget -O - http://ipkg.nslu2-linux.org/optware-ng/bootstrap/buildroot-armeabihf-bootstrap.sh | sh && \
-    /opt/bin/ipkg install ffmpeg && \
+    apt-get install -y --no-install-recommends wget ffmpeg && \
     wget ${site_url}/${pkg} && \
     dpkg -i $pkg && \
     apt-get autoremove -y && \
