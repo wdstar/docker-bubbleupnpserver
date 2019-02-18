@@ -1,4 +1,7 @@
-FROM arm32v7/openjdk:8-jre-slim
+FROM arm32v7/openjdk:8-jre
+# Note: Getting different architectures in slim images
+#   see https://github.com/docker-library/openjdk/issues/278
+#FROM arm32v7/openjdk:8-jre-slim
 
 ARG site_url=https://launchpad.net/~bubbleguuum/+archive/bubbleupnpserver/+files
 ARG pkg=bubbleupnpserver_0.9-5_all.deb
