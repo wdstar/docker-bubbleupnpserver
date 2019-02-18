@@ -1,5 +1,13 @@
 # docker-bubbleupnpserver
 
+## Architectures 
+
+- amd64: https://github.com/wdstar/docker-bubbleupnpserver
+- armhf: https://github.com/wdstar/docker-bubbleupnpserver/tree/armhf
+- armhf-optware-ng: https://github.com/wdstar/docker-bubbleupnpserver/tree/armhf-optware-ng
+
+## Usage
+
 - Build image.
 
 ```
