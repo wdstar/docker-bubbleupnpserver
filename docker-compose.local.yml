@@ -1,0 +1,13 @@
+---
+version: '2'
+services:
+  bubbleupnp-server:
+    restart: 'no'
+    build:
+      context: ./
+    image: ${REGISTRY_LOCAL}/${NAME}:${VER}
+    network_mode: "host"
+    volumes:
+    - "${PWD}/data/configuration.xml:/opt/share/bubbleupnpserver/configuration.xml:rw"
+    # for test
+    #command: /bin/sh -c 'while true; do echo dummy; sleep 600; done'
