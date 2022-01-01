@@ -1,10 +1,10 @@
-FROM openjdk:11-jre-slim
+FROM debian:bullseye-slim
 
 ARG site_url=https://bubblesoftapps.com/bubbleupnpserver
 ARG pkg=bubbleupnpserver_0.9-6_all.deb
 
 RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends wget ffmpeg && \
+    apt-get install -y --no-install-recommends ca-certificates wget && \
     wget ${site_url}/${pkg} && \
     apt-get install -y ./$pkg && \
     apt-get autoremove -y && \
